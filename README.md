@@ -45,7 +45,47 @@ This NetLogo-based ABM recreates the economic and spatial dynamics around an ind
    - **Workers** move away from SIPCOT if they cannot afford the area (downhill on land value gradient)
    - **Farmers** sell land and relocate when land values exceed their savings
    - **Farmers** may transform into workers when economically pressured (50% probability after 5 years)
-   - **Farmer suicide** occurs when savings plus debt fall below a critical threshold
+   - Agents face economic distress when savings fall below critical thresholds
+
+## Key Research Findings
+
+Through systematic exploration of the model's parameter space, three distinct behavioral regimes emerged based on the relative rates of land price inflation and income growth:
+
+### 1. Equilibrium Regime
+**Condition**: Land inflation ≈ Income inflation
+
+When land price growth roughly equals income growth, the system reaches a stable state with minimal agent movement. Both farmers and workers maintain their positions, as affordability remains relatively constant over time.
+
+### 2. Displacement Regime
+**Condition**: Land inflation > Income inflation
+
+When land prices rise faster than incomes, agents are forced to sell their land at a premium and relocate away from SIPCOT. This creates:
+- **Outward migration** patterns as land becomes unaffordable
+- **Farmer displacement** from high-value areas near industry
+- **Occupation switching** as farmers transition to become workers ("farkers")
+
+### 3. Clustering Regime
+**Condition**: Land inflation < Income inflation
+
+When incomes grow faster than land prices, workers accumulate savings and can afford to move closer to SIPCOT, where their income potential is highest. This produces:
+- **Worker concentration** near the industrial zone
+- **Spatial sorting** by occupation and economic capacity
+
+### Emergent Poverty Trap
+
+A critical emergent property of the model is **irreversibility of displacement**. Farmers who sell land near SIPCOT and move to peripheral areas become locked out from returning because:
+- Their distance from SIPCOT reduces potential income as workers
+- High land prices near SIPCOT remain unaffordable
+- This creates **path dependency** where initial conditions determine long-term outcomes
+
+This finding highlights how industrialization can create permanent economic stratification even without explicit barriers to mobility.
+
+### Field Validation
+
+The model's predictions were corroborated by **anecdotal evidence from field surveys** in the Sriperumbudur area, including observations of:
+- Farmers selling land and relocating to peripheral areas
+- Occupation transitions from agriculture to industrial work
+- Difficulty for displaced populations to return to areas near SIPCOT
 
 ## How to Use the Model
 
@@ -94,7 +134,7 @@ This NetLogo-based ABM recreates the economic and spatial dynamics around an ind
 
 - **Farmer**: Current count of farmers
 - **Worker**: Current count of workers
-- **Suicides**: Tragic count of farmers who have died due to economic distress
+- **Suicides**: Count of agents who have exited due to extreme economic distress
 
 #### Plot
 
@@ -157,10 +197,14 @@ The model particularly highlights the vulnerability of agricultural communities 
 
 For detailed presentations and research findings, please refer to:
 
-- **PowerPoint Presentation**: `ABM presentation Jun 8 final.pptx`
-  - Contains visual explanations, methodology, and key findings
+- **Research Writeup**: `IGCS report_3rd draft_Oct 24.docx`
+  - Formal research paper with abstract, methodology, findings, and future directions
+  - Discusses the three behavioral regimes and emergent poverty trap phenomenon
 
-- **Research Report**: `July 15 ABM (Achyut, Chandra, Jegadish).pdf`
+- **PowerPoint Presentation**: `ABM presentation Jun 8 final.pptx`
+  - Visual explanations, methodology, and key findings
+
+- **Final Presentation**: `July 15 ABM (Achyut, Chandra, Jegadish).pdf`
   - Comprehensive documentation of the research, analysis, and conclusions
 
 These files provide deeper insights into the model design, validation, and implications for urban planning and policy.
@@ -181,8 +225,8 @@ These files provide deeper insights into the model design, validation, and impli
 - `worker-shift-up`: Handles worker migration toward SIPCOT
 - `worker-shift-down`: Handles worker migration away from SIPCOT
 - `farmer-shift`: Handles farmer relocation behavior
-- `farmer-transform`: Converts farmers to workers under pressure
-- `farmer-die`: Models farmer suicide due to economic distress
+- `farmer-transform`: Converts farmers to workers under economic pressure
+- `farmer-die`: Removes agents who reach extreme economic distress thresholds
 
 ## Context: SIPCOT and Sriperumbudur
 
@@ -242,4 +286,4 @@ For questions or collaborations regarding this model, please refer to the reposi
 
 ---
 
-**Note**: This model addresses sensitive real-world issues including farmer distress and suicide. It is intended as a scientific tool for understanding and addressing these serious socioeconomic challenges.
+**Note**: This model addresses sensitive real-world issues including economic displacement, livelihood loss, and farmer distress in peri-urban areas. It is intended as a scientific tool for understanding these socioeconomic challenges and informing policy interventions to support vulnerable communities during industrial transitions.
