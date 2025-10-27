@@ -1,5 +1,8 @@
 # IGCS Summer 2016 - Land Use Agent-Based Model
 
+<img width="1024" height="655" alt="Screenshot 2025-10-27 at 6 12 38 PM" src="https://github.com/user-attachments/assets/fe46a6a7-490f-4560-a9dd-9d01c3d82751" />
+
+
 ## Overview
 
 This repository contains an Agent-Based Model (ABM) simulating land use dynamics in **Sriperumbudur**, Tamil Nadu, focusing on the socioeconomic impacts of industrialization around the **SIPCOT (State Industries Promotion Corporation of Tamil Nadu)** industrial area. This research was conducted during Summer 2016 at IGCS.
